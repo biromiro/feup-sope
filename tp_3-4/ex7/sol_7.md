@@ -1,0 +1,1 @@
+**Asynchronous communication**: No guarantee that the receiver actually receives it when it is ready to receive it (might receive it earlier on, and the signal gets lost)
