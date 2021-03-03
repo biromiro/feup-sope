@@ -6,22 +6,35 @@
 #include <sys/wait.h>
 #include <signal.h>
 
-void printWorld(){
-    printf(" world!");
+void printHello(){
+    printf("Hello!");
 }
 
+void ended(){
+    printf("/nFinished!");
+}
 
 int main(int argc, char* argv[]){
 
+    struct sigaction new, old;
+    sigset_t smask;
+
+    if (sigemptyset(&smask)==-1)	// block no signal
+        perror ("sigsetfunctions");
+    new.sa_handler = printHello;
+    new.sa_mask = smask;
+    new.sa_flags = 0;
+
+    if(sigaction(SIGUSR1, &new, &old) == -1)
+        perror ("sigaction");
+
     pid_t child_pid = fork();
 
-    printf("%d\n", child_pid);
-
-    if(child_pid == 0){
-        printf("Hello");
-        //raise(1);
+    if((size_t) child_pid == 0){
+        pause();
     } else {
-        //signal(1, printWorld);
+        printf("World: ");
+        kill(child_pid, SIGUSR1);
     }
 
     return 0;
