@@ -12,7 +12,6 @@
 void *rot(void *a) {
 	printf("\n\t In thread PID: %d ; TID: %lu. Thread number %d.", getpid(), (unsigned long) pthread_self(), *(int*)a);
     *(int *) a *= *(int *) a;
-    sleep(3);
 	pthread_exit(a);	// no termination code
 	}
 

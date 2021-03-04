@@ -1,0 +1,5 @@
+1. In a named pipe, the program described could be executed between unrelated processes to verify its premiss. As such, two named pipes would be set up between both, one representing the color to send and to process by the reading process, and one for the answer. As such, the first process would write to the first pipe the color, and the second process would read it, process it, and put its response on the second pipe, which would be later read by the first process.
+
+2. Using normal pipes, this program could only be implemented between child and parent processes. As such, the process could only verify that it had the color on its private pallete, using the corresponding pipe through a child co-process. This could not be extended to other processes using normal pipes as they don't allow unrelated process comunication.
+
+3. It is impossible to execute the program described using signals since they do not allow to send information. Since there is no way to inform the second process what color he wants to refer to, the second process cannot form a valid response and the premisse of the program fails.
