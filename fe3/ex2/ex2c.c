@@ -3,6 +3,6 @@
 
 int main()
 {
-    printf("%s"\n, getenv("USER"));
+    printf("%s\n", getenv("USER"));
     return 0;
 }
