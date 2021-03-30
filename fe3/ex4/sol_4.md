@@ -1,0 +1,5 @@
+Mutex is a locking mechanism whereas Semaphore is a signaling mechanism
+Mutex is just an object while Semaphore is an integer
+Mutex has no subtype whereas Semaphore has two types, which are counting semaphore and binary semaphore.
+Semaphore supports wait and signal operations modification, whereas Mutex is only modified by the process that may request or release a resource.
+Semaphore value is modified using wait() and signal() operations, on the other hand, Mutex operations are locked or unlocked.

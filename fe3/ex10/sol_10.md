@@ -1,0 +1,9 @@
+#The three phases of the Readers-Writers Problem
+
+Suppose a shared file which can be both read and writen. Readers and writers may request access at any given time to read or write to that file.
+
+A naive look at the problem may suggest that, since readers and writers cannot operate at the same time on the file, a mutex may be favorable. However, the first optimization problem occurs: it makes no sense to stop a reader from reading when another reader is also reading, since they can do it at the same time. However, this raises the first problem. Writers may not be allowed to write if readers keep on arriving while a reader is already reading, which results in writer starvation and readers preference.
+
+According to the last solution, it wouldn't be fair for a writer to be put on hold indefinitely while readers keep on arriving after the writer's request. To correct this, one might follow the lema "no writer, once added to the queue, shall be kept waiting longer than absolutely necessary". However, just like the solution above, this might result in starvation - however, on the readers side this time around. As such, this second case may result in reader starvation and writer preference.
+
+One might try to merge both solutions above to fix the problem. By giving a certain amount of time or a certain number of accesses and restraining/prohibiting the access of the file after that number is surpassed, the holding process (be it a reader or a writer) must gain priority to access the file. However, this might result in the third problem: low throughput. In avoiding starvation, the program might be holding back its maximum throughput, in that the restrictions might not fit the system using them perfectly. 
