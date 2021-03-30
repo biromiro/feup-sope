@@ -1,4 +1,4 @@
-#The three phases of the Readers-Writers Problem
+# The three phases of the Readers-Writers Problem
 
 Suppose a shared file which can be both read and writen. Readers and writers may request access at any given time to read or write to that file.
 
