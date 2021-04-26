@@ -1,0 +1,2 @@
+Input string: s
+Output string: S

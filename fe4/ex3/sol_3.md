@@ -1,0 +1,1 @@
+The page frames might not be in contiguous memory, and might be in different storages altogether. The fact that there would not exist any identifier for the pages following 0 would make it impossible to implement this solution.
