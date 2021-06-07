@@ -3,13 +3,11 @@
 - Removes External fragmentation
 - Allocating memory is easy and cheap
 - Any free page is ok, OS can take first- one out of list it keeps
-- Eliminates external fragmentation
 - Data (page frames) can be scattered- all over PM
 - Pages are mapped appropriately anyway
 - Allows demand paging and prepaging
 - More efficient swapping
-- No need for considerations about- fragmentation
-- Just swap out page least likely to be- used 
+- Just swap out page least likely to be used 
 
 # Disadvantages
 - Processes can be allocated a lot of unused memory (internal fragmentation)
