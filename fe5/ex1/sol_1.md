@@ -10,7 +10,7 @@ The best programming model would be Polling
 
 ## iii - most of the I/O operations of a specific device are very slow
 
-The best programming model would be Interrupts
+The best programming model would be DMA
 
 ## iv - the computer's bus is very slow
 
@@ -18,4 +18,4 @@ The best programming model would be DMA
 
 ## v - the CPU operates much faster compared to the speed of the DMA controller
 
-The best programming model would be Polling/Interrupts
+The best programming model would be Interrupts
